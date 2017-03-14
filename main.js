@@ -38,6 +38,11 @@ function submit() {
   }
 }
 
+function copy() {
+  document.getElementById('output').select();
+  document.execCommand('copy');
+}
+
 function doStuff(className, inputFields, isPublic) {
 
   let declaration = [];
@@ -80,7 +85,7 @@ function doStuff(className, inputFields, isPublic) {
   constructor.push('    }');
 
   let output = '';
-  output += 'class ' + className + ' {';
+  output += (isPublic ? 'public ' : '') + 'class ' + className + ' {';
   output += '\n\n';
   output += declaration.join('\n');
   output += '\n\n';
@@ -103,6 +108,6 @@ function capitalizeFirstLetter(string) {
 }
 
 let className = 'PickPackObjectBarcode';
-let inputFields = ['long productPackId', 'int packSize', 'String barcode', 'boolean success'];
+let inputFields = ['String param'];
 
 doStuff(className, inputFields, false);

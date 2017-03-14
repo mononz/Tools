@@ -7,30 +7,32 @@
 
 <body>
 
-<h3>Java Object Builder</h3>
+<h2>Java Object Builder</h2>
 
-<input type="text" placeholder="Class Name" id="classNameInput">
+<input type="text" placeholder="Class Name" id="classNameInput" value="ExampleClassName">
 
 <br>
 <br>
 
 <div id="inputs">
-    <input type="text" onchange="newTextInput()" placeholder="Type Param">
+    <input id="first" type="text" value="String param"><br>
+    <input type="text" onchange="newTextInput()" placeholder="type param">
 </div>
 
+<p>
+    <input type="checkbox" id="isPublic">
+    <label for="isPublic"><small>Public</small></label>
+</p>
+
+<button onclick="submit()">Generate Class</button>
+
+<button onclick="copy()">Copy Class</button>
+
+<br>
 <br>
 
-<input type="checkbox" id="isPublic">Public
-
-<br>
-<br>
-
-<button onclick="submit()">Submit</button>
-
-<br>
-<br>
-
-<textarea id="output" cols="100" rows="50">Output</textarea>
+<label for="output"><small>Output</small></label>
+<textarea id="output" rows="40" style="width:100%">Output</textarea>
 
 <script src="main.js"></script>
 
